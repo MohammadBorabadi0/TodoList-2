@@ -22,7 +22,7 @@ html {
   display: flex;
   align-items: center;
   min-height: 100vh;
-  margin-top: 3rem;
+  padding: 3rem 0;
   flex-direction: column;
 }
 
@@ -40,7 +40,7 @@ html {
 /* TodoForm Styles  */
 
 .todo-form {
-  margin-bottom: 3rem;
+  margin-bottom: 5rem;
   width: 40%;
   display: flex;
   justify-content: center;
@@ -89,8 +89,14 @@ html {
   margin-bottom: 1rem;
 }
 
+.todo-item.deactive {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
 .todo-item h4 {
   color: #fff;
+  flex: 1;
 }
 
 .todo-item button {
@@ -101,14 +107,17 @@ html {
 .todo-item button svg {
   font-size: 2.5rem;
   cursor: pointer;
+  color: #fff;
+  margin-top: 0.6rem;
+  transition: all 0.2s ease-in;
 }
 
-.trash-btn {
-  color: rgb(240, 9, 9);
+.buttons .edit-btn svg:hover {
+  color: rgb(245, 70, 7);
 }
 
-.edit-btn {
-  color: #ea580c;
+.buttons .trash-btn svg:hover {
+  color: rgb(245, 12, 12);
 }
 
 /* Modal Styles */
@@ -171,4 +180,87 @@ html {
 
 .close-modal svg {
   font-size: 3rem;
+}
+
+/* Filter And Sort Styles  */
+
+.filter-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.filter-container .filter {
+  display: flex;
+}
+
+.filter-container .filter button {
+  background: linear-gradient(25deg, #92bffa, #60a5fa);
+  color: #fff;
+  padding: 1rem;
+  margin-left: 1rem;
+  font-size: 1.4rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+
+.filter button.active {
+  background: linear-gradient(25deg, #0767e6, #032a94);
+  color: #fff;
+}
+
+.sort {
+  font-size: 1.6rem;
+  border-bottom: 1px solid rgb(160, 158, 158);
+}
+
+/* Media Queries  */
+
+@media (max-width: 992px) {
+  html {
+    font-size: 55%;
+  }
+  .todo-form {
+    width: 70%;
+  }
+  .todo-list {
+    width: 70%;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 50%;
+  }
+  .todo-form button {
+    font-size: 1.6rem;
+  }
+  .modal-content {
+    width: 70vw;
+  }
+  .modal-content form button.edit-btn {
+    padding: 0.7rem 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  html {
+    font-size: 45%;
+  }
+  .todo-form {
+    width: 90%;
+  }
+  .todo-list {
+    width: 90%;
+  }
+  .todo-form button {
+    font-size: 1.4rem;
+  }
+  .modal-content {
+    width: 90vw;
+  }
+  .modal-content form button.edit-btn {
+    padding: 0.8rem 1rem;
+  }
 }
