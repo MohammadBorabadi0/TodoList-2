@@ -9,11 +9,14 @@
   text-decoration: none;
   font-family: "vazir";
   font-size: 1.8rem;
+  letter-spacing: 1.5px;
 }
 
 html {
   font-size: 62.5%;
 }
+
+/* TodoApp Styles  */
 
 .todo-app {
   display: flex;
@@ -33,6 +36,8 @@ html {
   font-size: 2.5rem;
   color: #222;
 }
+
+/* TodoForm Styles  */
 
 .todo-form {
   margin-bottom: 3rem;
@@ -64,4 +69,106 @@ html {
   padding: 0.7rem 1rem;
   border-radius: 0.3rem;
   cursor: pointer;
+}
+
+/* TodoList Styles  */
+
+.todo-list {
+  width: 40%;
+}
+
+/* TodoItem Styles */
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(-120deg, #581c87, #aa35ee);
+  padding: 0.8rem 2rem;
+  border-radius: 0.3rem;
+  margin-bottom: 1rem;
+}
+
+.todo-item h4 {
+  color: #fff;
+}
+
+.todo-item button {
+  background-color: transparent;
+  margin-right: 1.5rem;
+}
+
+.todo-item button svg {
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+.trash-btn {
+  color: rgb(240, 9, 9);
+}
+
+.edit-btn {
+  color: #ea580c;
+}
+
+/* Modal Styles */
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  width: 60vh;
+  height: 300px;
+  flex-direction: column;
+  position: relative;
+}
+
+.modal-content h3 {
+  position: absolute;
+  top: 5px;
+}
+
+.modal-content input {
+  flex: 1;
+  border: 2px solid #581c87;
+  border-radius: 0.3rem;
+  margin-left: -0.3rem;
+  padding: 0.5rem 2rem;
+}
+
+.modal-content input:focus {
+  background-color: #e9d5ff;
+}
+
+.modal-content form button.edit-btn {
+  background-color: #581c87;
+  color: #fff;
+  padding: 0.7rem 1rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+
+.close-modal {
+  position: absolute;
+  top: 4px;
+  right: 2px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.close-modal svg {
+  font-size: 3rem;
 }
