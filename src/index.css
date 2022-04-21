@@ -83,7 +83,7 @@ html {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(-120deg, #581c87, #aa35ee);
+  background: linear-gradient(-65deg, #b356f1, #600496);
   padding: 0.8rem 2rem;
   border-radius: 0.3rem;
   margin-bottom: 1rem;
@@ -94,9 +94,19 @@ html {
   opacity: 0.5;
 }
 
-.todo-item h4 {
+.todo-title {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.todo-title h4 {
   color: #fff;
   flex: 1;
+}
+
+.todo-title span {
+  font-size: 1.2rem;
 }
 
 .todo-item button {
@@ -183,7 +193,18 @@ html {
   font-size: 3rem;
 }
 
-/* Filter And Sort Styles  */
+/* Search And Filter And Sort Styles  */
+
+.search {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.search input {
+  border-bottom: 1px solid #222;
+  padding: 0.5rem 2rem;
+}
 
 .filter-container {
   display: flex;
@@ -213,7 +234,13 @@ html {
 
 .sort {
   font-size: 1.6rem;
-  border-bottom: 1px solid rgb(160, 158, 158);
+  border: 1px solid rgb(160, 158, 158);
+  padding: 0.3rem 1rem;
+  border-radius: 0.3rem;
+}
+
+.sort:focus {
+  border: 2px solid #581c87;
 }
 
 /* Media Queries  */

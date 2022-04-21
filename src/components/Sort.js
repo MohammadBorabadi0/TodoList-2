@@ -1,8 +1,8 @@
 import React from "react";
-import { useTodo } from "../Providers/context/todo_context";
+import { useFilter } from "../Providers/context/filter_context";
 
 const Sort = () => {
-  const { sort, updateSort } = useTodo();
+  const { sort, updateSort } = useFilter();
 
   return (
     <select className="sort" value={sort} onChange={updateSort}>

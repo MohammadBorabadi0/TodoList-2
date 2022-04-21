@@ -1,26 +1,30 @@
 import React from "react";
-import { useTodo } from "../Providers/context/todo_context";
+import { useFilter } from "../Providers/context/filter_context";
 
 const Filter = () => {
-  const { filter, updateFilter } = useTodo();
+  const { filters, updateFilters } = useFilter();
+  const { status } = filters;
 
   return (
     <div className="filter">
       <button
-        onClick={updateFilter}
-        className={`${filter === "همه" && "active"}`}
+        name="status"
+        onClick={updateFilters}
+        className={`${status === "همه" && "active"}`}
       >
         همه
       </button>
       <button
-        onClick={updateFilter}
-        className={`${filter === "انجام شده" && "active"}`}
+        name="status"
+        onClick={updateFilters}
+        className={`${status === "انجام شده" && "active"}`}
       >
         انجام شده
       </button>
       <button
-        onClick={updateFilter}
-        className={`${filter === "انجام نشده" && "active"}`}
+        name="status"
+        onClick={updateFilters}
+        className={`${status === "انجام نشده" && "active"}`}
       >
         انجام نشده
       </button>

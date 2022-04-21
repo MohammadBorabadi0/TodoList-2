@@ -7,7 +7,7 @@ import { useTodo } from "../Providers/context/todo_context";
 const Modal = ({ item, isEditing, setIsEditing }) => {
   const inputRef = useRef();
   const modalRef = useRef();
-  const [inputVal, setInputVal] = useState(item.todo);
+  const [inputVal, setInputVal] = useState(item.name);
   const { dispatch } = useTodo();
 
   useEffect(() => {

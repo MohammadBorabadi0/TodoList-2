@@ -6,3 +6,5 @@ export const EDIT_TASK = "EDIT_TASK";
 export const UPDATE_SORT = "UPDATE_SORT";
 export const UPDATE_FILTER = "UPDATE_FILTER";
 export const TOGGLE_TASK = "TOGGLE_TASK";
+export const SEARCH_TASK = "SEARCH_TASK";
+export const LOAD_TASKS = "LOAD_TASKS";

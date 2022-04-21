@@ -1,47 +1,30 @@
 import React, { createContext, useContext, useEffect, useReducer } from "react";
-import {
-  FILTER_TASK,
-  SORT_TASK,
-  UPDATE_FILTER,
-  UPDATE_SORT,
-} from "../../actions";
-
-// Reducer
-import reducer from "../reducers/todo_reducer";
+import { LOAD_TASKS } from "../../actions";
+import todo_reducer from "../reducers/todo_reducer";
 
 // InitialState
 const initialState = {
   todos: [],
-  filtered_todos: [],
-  filter: "همه",
-  sort: "oldest",
 };
 
-// CreateContext
 const TodoContext = createContext();
 
 const TodoProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [state, dispatch] = useReducer(todo_reducer, initialState);
 
-  const updateFilter = (e) => {
-    let value = e.target.textContent;
-    dispatch({ type: UPDATE_FILTER, payload: value });
-  };
+  // useEffect(() => {
+  //   const savedData = JSON.parse(localStorage.getItem("tasks"));
+  //   if (savedData) {
+  //     dispatch({ type: LOAD_TASKS, payload: savedData });
+  //   }
+  // }, []);
 
-  const updateSort = (e) => {
-    let value = e.target.value;
-    dispatch({ type: UPDATE_SORT, payload: value });
-  };
-
-  useEffect(() => {
-    dispatch({ type: FILTER_TASK });
-    dispatch({ type: SORT_TASK });
-  }, [state.todos, state.filter, state.sort]);
+  // useEffect(() => {
+  //   JSON.stringify(localStorage.setItem("tasks", state.todos));
+  // }, [state.todos]);
 
   return (
-    <TodoContext.Provider
-      value={{ ...state, dispatch, updateSort, updateFilter }}
-    >
+    <TodoContext.Provider value={{ ...state, dispatch }}>
       {children}
     </TodoContext.Provider>
   );
@@ -49,5 +32,4 @@ const TodoProvider = ({ children }) => {
 
 export default TodoProvider;
 
-// Custom Hook
 export const useTodo = () => useContext(TodoContext);

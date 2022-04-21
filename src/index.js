@@ -3,13 +3,15 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 
-// Context 
+// Context
 import TodoProvider from "./Providers/context/todo_context";
-
+import FilterProvider from "./Providers/context/filter_context";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <TodoProvider>
-    <App />
+    <FilterProvider>
+      <App />
+    </FilterProvider>
   </TodoProvider>
 );

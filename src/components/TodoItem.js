@@ -7,7 +7,7 @@ import { AiOutlineCloseCircle } from "react-icons/ai";
 
 // Context
 import { useTodo } from "../Providers/context/todo_context";
-import { EDIT_TASK, REMOVE_TASK, TOGGLE_TASK } from "../actions";
+import { REMOVE_TASK, TOGGLE_TASK } from "../actions";
 import Modal from "./Modal";
 
 const TodoItem = ({ item }) => {
@@ -32,10 +32,14 @@ const TodoItem = ({ item }) => {
     );
   }
 
-
   return (
     <div className={`todo-item ${item.isComplete && "deactive"}`}>
-      <h4 onClick={handleToggle}>{item.todo}</h4>
+      <div className="todo-title">
+        <h4 onClick={handleToggle}>{item.name}</h4>
+        <span>
+          {item.date},{item.time}
+        </span>
+      </div>
       <div className="buttons">
         <button className="edit-btn" onClick={handleEdit}>
           <FaRegEdit />
